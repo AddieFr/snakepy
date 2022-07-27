@@ -23,7 +23,7 @@ else:
 pygame.display.set_caption("Snake Game")
 game_window = pygame.display.set_mode((frame_size_x, frame_size_y))
 
-#colors
+
 black = pygame.Color(0,0,0)
 white = pygame.Color(255,255,255)
 red = pygame.Color(255,0,0)
@@ -32,7 +32,7 @@ blue = pygame.Color(0,0,255)
 
 
 fps_controller = pygame.time.Clock()
-#snake square size
+
 square_size = 60
 
 def init_vars():
@@ -59,7 +59,7 @@ def show_score(choice, color, font, size):
     game_window.blit(score_surface, score_rect)
     
 
-#game loop
+
 
 while True:
     for event in pygame.event.get():
@@ -106,7 +106,7 @@ while True:
     else:
         snake_body.pop()
 
-    # spawn food
+    
     if not food_spawn:
         food_pos = [random.randrange(1,(frame_size_x // square_size)) * square_size, 
             random.randrange(1,(frame_size_y // square_size)) * square_size]
@@ -122,7 +122,7 @@ while True:
     pygame.draw.rect(game_window,blue, pygame.Rect(food_pos[0], 
                     food_pos[1], square_size, square_size))
     
-    #game over condiditons
+
 
     for block in snake_body[1:]:
         if head_pos[0] == block[0] and head_pos[1] == block[1]:
